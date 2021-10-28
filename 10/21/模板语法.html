@@ -18,10 +18,6 @@
         2、指令语法
            功能：用于解析标签（包括：属性、内容、绑定事件）
            写法：v-bind:href="xxx",简写:href="xxx"，xxx是js表达式
-           
-
-
-    
      -->
 
 
@@ -29,10 +25,11 @@
     <div id="root">
         <h1>1、插值语法</h1>
         <h3>你好，{{name}}</h3>
-        <hr/>
+        <hr />
         <h1>2、指令语法</h1>
         <a v-bind:href="url" target="_blank">点我去百度1</a>
         <a :href="url" target="_blank">点我去百度2</a>
+        <a :href="url" target="_blank">点我去百度</a>
     </div>
     </div>
     <script type="text/javascript">
