@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>axios基本使用</title>
+    <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.27.2/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <h2 class="page-header">基本使用</h2>
+        <button class="btn btn-primary" @click="getBook">发送GET请求</button>
+        <button class="btn btn-warning">发送POST请求</button>
+        <button class="btn btn-success">发送PUT请求</button>
+        <button class="btn btn-danger">发送DELETE请求</button>
+    </div>
+    <div id="app">
+        <h2>{{message}}</h2>
+        <button class="btn btn-primary" @click="change">修改</button>
+    </div>
+    <script type="text/javascript">
+        Vue.config.productionTip = false;
+
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                message: 'henu'
+
+            },
+            methods: {
+                change() {
+                    this.message = '河南大学';
+                    console.log('change')
+                },
+                getBook() {
+                    axios.get({
+                        url: 'http://localhost:3000/posts/2'
+                    }).then(function(response) {
+                        console.log(response);
+                    })
+                }
+            }
+        });
+        //获取按钮
+        const btn = document.querySelectorAll('button');
+        //第一个
+        btn[0].onclick = function() {
+            //发送Ajax请求
+            axios({
+                //请求类型
+                method: 'GET',
+                //URL
+                url: 'http://localhost:3000/posts/2',
+            }).then(function(response) {
+                console.log(response);
+            })
+        };
+        //第二个
+        btn[1].onclick = function() {
+            //发送Ajax请求
+            axios({
+                //请求类型
+                method: 'POST',
+                //URL
+                url: 'http://localhost:3000/posts',
+                //设置请求体
+                data: {
+                    title: '河南大学',
+                    author: 'wyx'
+                }
+            }).then(function(response) {
+                console.log(response);
+            })
+        };
+        //第三个 
+        btn[2].onclick = function() {
+            //发送Ajax请求
+            axios({
+                //请求类型
+                method: 'PUT',
+                //URL
+                url: 'http://localhost:3000/posts/3',
+                //设置请求体
+                data: {
+                    title: 'henu',
+                    author: 'weiyuexin'
+                }
+            }).then(function(response) {
+                console.log(response);
+            })
+        };
+        //第四个
+        btn[3].onclick = function() {
+            //发送Ajax请求
+            axios({
+                //请求类型
+                method: 'DELETE',
+                //URL
+                url: 'http://localhost:3000/posts/4',
+            }).then(function(response) {
+                console.log(response);
+            })
+        };
+    </script>
+
+</body>
+
+</html>

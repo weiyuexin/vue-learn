@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>axios的其他使用</title>
+    <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.27.2/axios.min.js"></script>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <h2 class="page-header">基本使用</h2>
+        <button class="btn btn-primary">发送GET请求</button>
+        <button class="btn btn-warning">发送POST请求</button>
+        <button class="btn btn-success">发送PUT请求</button>
+        <button class="btn btn-danger">发送DELETE请求</button>
+    </div>
+    <script type="text/javascript">
+        //获取按钮
+        const btn = document.querySelectorAll('button');
+        //默认配置
+        axios.defaults.method = 'GET'; //设置默认请求类型
+        axios.defaults.baseURL = 'http://localhost:3000'; //设置基础URL
+        axios.defaults.timeout = 5000; //超时时间
+        axios.defaults.params = {
+            id: 100
+        };
+        btn[0].onclick = function() {
+            axios({
+                url: "/posts"
+            }).then(function(response) {
+                console.log(response);
+            });
+        };
+    </script>
+
+</body>
+
+</html>

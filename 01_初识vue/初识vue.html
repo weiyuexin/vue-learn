@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>初识vue</title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        {{message.toUpperCase()}}<br> 姓名：{{name}}<br>性别：{{sex}}<br>地址：{{address}}<br>{{Date.now()}}</br>
+        {{3+2}}
+    </div>
+
+    <script type="text/javascript">
+        //关闭Vue启动时的生产环境提示
+        Vue.config.productionTip = false;
+        var vm = new Vue({
+            el: "#app",
+            data: {
+                message: "hello vue",
+                name: "韦月鑫",
+                sex: "男",
+                address: "开封"
+            }
+        });
+    </script>
+</body>
+
+</html>

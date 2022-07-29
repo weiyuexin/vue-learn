@@ -1,0 +1,64 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "id": 2,
+      "title": "测试",
+      "author": "韦月鑫"
+    },
+    {
+      "title": "henu",
+      "author": "weiyuexin",
+      "id": 3
+    },
+    {
+      "title": "河南大学",
+      "author": "wyx",
+      "id": 5
+    },
+    {
+      "title": "河南大学",
+      "author": "wyx",
+      "id": 6
+    },
+    {
+      "title": "河南大学",
+      "author": "wyx",
+      "id": 7
+    },
+    {
+      "title": "河南大学",
+      "author": "wyx",
+      "id": 8
+    },
+    {
+      "title": "河南大学",
+      "author": "wyx",
+      "id": 9
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    },
+    {
+      "body": "hhhh哈哈哈哈哈",
+      "postId": 2,
+      "id": 2
+    },
+    {
+      "body": "hhhh哈哈哈哈哈",
+      "postId": 2,
+      "id": 3
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
