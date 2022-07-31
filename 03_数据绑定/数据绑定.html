@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数据绑定</title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <h1>单向数据绑定：v-bind: / :</h1>
+        <!-- 普通写法 -->
+        <input type="text" v-bind:value="name"><br/>
+        <!-- 简写 -->
+        <input type="text" v-bind:value="name"><br/>
+
+
+        <h1>双向数据绑定：v-model:value="name" / v-model="name"</h1>
+
+        <!-- 普通写法 -->
+        <input type="text" v-model:value="name"><br/>
+        <!-- 简写 -->
+        <input type="text" v-model="name"><br/>
+
+        <h2>注意：v-model只能用在表单类元素（输入类元素），即有value属性的元素</h2>
+
+    </div>
+    <script type="text/javascript">
+        Vue.config.productionTip = false;
+        new Vue({
+            el: '#root',
+            data: {
+                name: '尚硅谷'
+            }
+        });
+    </script>
+</body>
+
+</html>
